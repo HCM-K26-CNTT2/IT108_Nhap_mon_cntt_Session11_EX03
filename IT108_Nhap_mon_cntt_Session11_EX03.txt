@@ -1,0 +1,19 @@
+﻿Phần 1 (Phân tích): Định nghĩa rõ 4 tham số của VLOOKUP trong bài toán này (Lookup_value là gì? Table_array nằm ở đâu?...).
+* Lookup_value: là chìa khóa để tìm nội dung 
+* Table_array: bảng muốn tham chiếu để lấy nội dung 
+* col_index_num: cột, stt,... mà muốn lấy nội dung
+* range_lookup: muốn lấy kết quả chính xác gõ False hoặc 0
+
+
+* vd: lấy nội dung từ cột họ tên từ bảng 1 sang cột STT của bảng 2
+* Giả định: cột 1 chỉ có 2 cột là STT và họ tên
+* Lookup_value: sẽ lấy nội dung cho cột STT là số 1 thì sẽ chọn ô chứa số 1 của bảng 2, vd: A17,A20,...
+* Table_array: sẽ quét từ cột STT của bảng 1 đến cột Họ tên
+* col_index_num: nếu muốn lấy ndung từ cột họ tên thì gõ số 2 vì chỉ có hai cột (STT và họ tên)
+* range_lookup: gõ False để ra kết quả chính xác 100%
+
+
+
+
+Phần 2 (Triển khai): Viết công thức VLOOKUP hoàn chỉnh (kèm hàm IFERROR để xử lý lỗi #N/A thân thiện).
+=IFERROR(VLOOKUP(A2, Danh_Muc!$A:$C, 2, False), “không tìm thấy”)
